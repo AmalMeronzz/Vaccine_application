@@ -1,0 +1,46 @@
+{% extends 'admin/index.html' %}
+{% block content %}
+
+<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" >
+                        <div class="sparkline9-list responsive-mg-b-30" style="margin-top: 20px;">
+                            <div class="sparkline9-graph">
+                                <div class="basic-login-form-ad">
+                                    <div class="row" style="color: white;">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-left:60px;">
+                                            <div class="basic-login-inner" >
+                                                <h3>ADD MEDICINE</h3><br>
+                                                <form  method="post">
+                                                    {% csrf_token %}
+                                                    <div class="form-group-inner" >
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                <label class="login2" style="color: white;">Medicine name</label>
+                                                            </div>
+                                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                <input style="color: #62f3ca;" type="text" class="form-control" placeholder="medicine name" name="name"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <br>
+                                                    <div class="login-btn-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                <div class="login-horizental">
+                                                                    <button class="btn btn-sm btn-primary login-submit-cs" type="submit">save</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+</div>
+
+{% endblock %}

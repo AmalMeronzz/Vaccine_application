@@ -1,0 +1,51 @@
+{% extends 'user/index.html' %}
+{% block content %}
+
+<div class="card" style="margin-left:100px; min-height:500px;" >
+                  <div class="card-body">
+                    <center><br><br>
+                      <h2 class="card-title">BOOK VACCINE SLOT </h2>
+                    </center><br><br>
+                      <div class="table-responsive">
+                          <form method="post">
+                              {% csrf_token %}
+                              <table class="table">
+                                  <tr>
+                                      <th style="width:100px;">DATE</th>
+                                      <td><input type="date"  name="date" required></td>
+                                  </tr>
+                                  <tr>
+                                      <th style="width:100px;">Time</th>
+                                      <td>
+                                          <select name="time" required>
+                                              <option value="8am-10am">8:00 Am to 10:00 Am</option>
+                                              <option value="10am-12pm">10:00 Am to 12:00 pm</option>
+                                              <option value="2pm-4pm">2:00 Am to 4:00 Am</option>
+                                          </select>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <th style="width:100px;">slot</th>
+                                      <td>
+                                          <select name="slot" required>
+                                              <option value="1">1</option>
+                                              <option value="2">2</option>
+                                              <option value="3">3</option>
+                                              <option value="4">4</option>
+                                          </select>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <th></th>
+                                      <td><input type="submit" value="save" style="background:skyblue; color:white;"></td>
+                                  </tr>
+
+                              </table>
+                          </form>
+
+                    </div>
+                  </div>
+</div>
+
+
+{% endblock %}

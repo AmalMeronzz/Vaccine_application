@@ -1,0 +1,32 @@
+{% extends 'user/index.html' %}
+{% block content %}
+
+<div class="card" style="margin-left:100px;">
+                  <div class="card-body">
+                    <center><br><br>
+                      <h2 class="card-title">VACCINE LIST</h2>
+                    </center><br><br>
+                      <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                              <th><h4>No.</h4></th>
+                              <th><h4>VACCINE TYPE</h4></th>
+                              <th><h4>SELECT</h4></th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                              <td style="width:150px;"> <h5>{{ forloop.counter }}</h5></td>
+                              <td style="width:300px;"><h5>{{i.1}}</h5></td>
+                              <td style="width:160px;"><a href="../userviewmedicine/{{i.0}}"><button style="width:80px; background:red; color:white;">select</button></a></td>
+                              </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'admin/index.html' %}
+{% block content %}
+<style>
+    table,th{color:white;}
+    h4,h5{color:white;}
+</style>
+<div class="card">
+                  <div class="card-body">
+                    <center>
+                      <h2 class="card-title">VACCINE LIST &nbsp; &nbsp; &  &nbsp;&nbsp;ADD MEDICINE</h2>
+                    </center><br><br>
+                      <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                              <th><h4>No.</h4></th>
+                              <th><h4>VACCINE TYPE</h4></th>
+                              <th><h4>ADD MEDICINE</h4></th>
+                              <th><h4>EDIT</h4></th>
+                              <th><h4>DELETE</h4></th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                              <td> <h5>{{ forloop.counter }}</h5></td>
+                              <td style="width:350px;"><h5>{{i.1}}</h5></td>
+                              <td style="width:160px;"><a href="../addmedicine/{{i.0}}"><div class="badge badge-outline-success">add</div></a></td>
+                              <td><a href="../editvaccinetype/{{i.0}}"><div class="badge badge-outline-warning">edit</div></a></td>
+                              <td><a href="../deletevaccinetype/{{i.0}}"><div class="badge badge-outline-danger">delete</div></a></td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}

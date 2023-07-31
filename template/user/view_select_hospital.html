@@ -1,0 +1,36 @@
+{% extends 'user/index.html' %}
+{% block content %}
+
+<div class="card" style="margin-left:100px; min-height:500px;" >
+                  <div class="card-body">
+                    <center><br><br>
+                      <h2 class="card-title">SELECT HOSPITAL</h2>
+                    </center><br><br>
+                      <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                              <th><h4>No.</h4></th>
+                              <th><h4>IMAGE</h4></th>
+                              <th><h4>HOSPITAL NAME</h4></th>
+                              <th><h4>ADDRESS</h4></th>
+                              <th><h4>SELECT</h4></th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                              <td><h5>{{ forloop.counter }}</h5></td>
+                              <td><img src="../media/{{i.9}}" width="150px" style="max-height:130px;"></td>
+                              <td><h5>{{i.1}}</h5></td>
+                              <td>{{i.2}}</td>
+                              <td style="width:160px;"><a href="../bookslot/{{i.0}}"><button style="width:80px; background:red; color:white;">select</button></a></td>
+                              </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+
+{% endblock %}

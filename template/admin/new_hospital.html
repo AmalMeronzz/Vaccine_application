@@ -1,0 +1,47 @@
+{% extends 'admin/index.html' %}
+{% block content %}
+
+<div class="card">
+                  <div class="card-body">
+                    <center>
+                      <h2 class="card-title">HOSPITAL LIST</h2>
+                    </center><br><br>
+                      <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                                <th>No.</th>
+                                <th>HOSPITAL IMAGE</th>
+                                <th>HOSPITAL NAME</th>
+                                <th>ADDRESS</th>
+                                <th>PHONE</th>
+                                <th>EMAIL</th>
+                                <th>PINCODE</th>
+                                <th>DISTRICT</th>
+                                <th>TALUK</th>
+                                <th>PASSWORD</th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                                <td> {{ forloop.counter }}</td>
+                                <td><img src="../media/{{i.9}}" width="100px;"></td>
+                                <td>{{i.1}}</td>
+                                <td>{{i.2}}</td>
+                                <td>{{i.3}}</td>
+                                <td>{{i.5}}</td>
+                                <td>{{i.4}}</td>
+                                <td>{{i.10}}</td>
+                                <td>{{i.11}}</td>
+                                <td>{{i.6}}</td>
+                              <td><a href="../approvehospital/{{i.0}}"><div class="badge badge-outline-success">APPROVE</div></a></td>
+                              <td><a href="../deletehospital1/{{i.0}}"><div class="badge badge-outline-danger">DELETE</div></a></td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}
